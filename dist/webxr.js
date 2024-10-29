@@ -496,7 +496,7 @@ function ge() {
         const h = t.trackballX, m = t.trackballY, C = -Math.cos(h) * r + Math.sin(h) * Math.sin(m) * l, k = -Math.cos(m) * l, L = Math.sin(h) * r + Math.cos(h) * Math.sin(m) * l;
         t.targetX = t.targetX + C * t.targetDiam * 1e-3, t.targetY = t.targetY + k * t.targetDiam * 1e-3, t.targetZ = t.targetZ + L * t.targetDiam * 1e-3;
       } else
-        t.trackballY < 5 && (t.trackballY = t.trackballY - l * 0.01, t.trackballX = t.trackballX - r * 0.01);
+        t.trackballX < 5 && (t.trackballY = t.trackballY - l * 0.01, t.trackballX = t.trackballX - r * 0.01);
     });
     const d = { w: 0, a: 0, s: 0, d: 0 };
     return t.lkgCanvas.addEventListener("keydown", (s) => {
@@ -538,7 +538,7 @@ function ge() {
         const h = t.trackballX, m = t.trackballY, C = -Math.cos(h) * r + Math.sin(h) * Math.sin(m) * l, k = -Math.cos(m) * l, L = Math.sin(h) * r + Math.cos(h) * Math.sin(m) * l;
         t.targetX = t.targetX + C * t.targetDiam * 1e-3, t.targetY = t.targetY + k * t.targetDiam * 1e-3, t.targetZ = t.targetZ + L * t.targetDiam * 1e-3;
       } else
-        t.trackballY < 5 && (t.trackballY = t.trackballY - l * 0.01, t.trackballX = t.trackballX - r * 0.01);
+        t.trackballX < 5 && (t.trackballY = t.trackballY - l * 0.01, t.trackballX = t.trackballX - r * 0.01);
     }), (a = t.appCanvas) == null || a.addEventListener("keydown", (s) => {
       switch (s.code) {
         case "KeyW":
