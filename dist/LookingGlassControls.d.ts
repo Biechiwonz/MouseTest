@@ -1,1 +1,1 @@
-export declare function initLookingGlassControlGUI(): any;
+export declare function initLookingGlassControlGUI(): HTMLDivElement | undefined;

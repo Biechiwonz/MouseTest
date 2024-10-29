@@ -337,16 +337,8 @@ export function initLookingGlassControlGUI() {
 				if (-0.5 <= cfg.trackballY && cfg.trackballY <=0.5) {
 					cfg.trackballY = cfg.trackballY - my * 0.01
 					cfg.trackballX = cfg.trackballX - mx * 0.01
-					}
-
 				}
-
-				
-
-
-
-					
-			}
+			}	
 		})
 	
 		cfg.appCanvas?.addEventListener("keydown", (ev) => {
