@@ -403,7 +403,7 @@ function ge() {
       let a = d.d - d.a, r = d.w - d.s;
       a && r && (a *= Math.sqrt(0.5), r *= Math.sqrt(0.5));
       const l = t.trackballX, h = t.trackballY, m = Math.cos(l) * a - Math.sin(l) * Math.cos(h) * r, C = -Math.sin(h) * r, M = -Math.sin(l) * a - Math.cos(l) * Math.cos(h) * r;
-      t.targetX < 50 && (t.targetX = t.targetX + m * t.targetDiam * 0.03, t.targetY = t.targetY + C * t.targetDiam * 0.03, t.targetZ = t.targetZ + M * t.targetDiam * 0.03), requestAnimationFrame(u);
+      t.targetX < 0.8 && (t.targetX = t.targetX + m * t.targetDiam * 0.03, t.targetY = t.targetY + C * t.targetDiam * 0.03, t.targetZ = t.targetZ + M * t.targetDiam * 0.03), requestAnimationFrame(u);
     };
     const x = document.createElement("style");
     document.head.appendChild(x), (i = x.sheet) == null || i.insertRule("#LookingGlassWebXRControls * { all: revert; font-family: sans-serif }");
@@ -418,7 +418,7 @@ function ge() {
       ye(t);
     });
     const E = document.createElement("div");
-    c.appendChild(E), E.style.width = "290px", E.style.whiteSpace = "normal", E.style.color = "rgba(255,255,255,0.7)", E.style.fontSize = "14px", E.style.margin = "5px 0", E.innerHTML = "mousetest9 Click the popup and use WASD, mouse left/right drag, and scroll.";
+    c.appendChild(E), E.style.width = "290px", E.style.whiteSpace = "normal", E.style.color = "rgba(255,255,255,0.7)", E.style.fontSize = "14px", E.style.margin = "5px 0", E.innerHTML = "mousetest10 Click the popup and use WASD, mouse left/right drag, and scroll.";
     const _ = document.createElement("div");
     c.appendChild(_);
     const T = (a, r, l) => {
