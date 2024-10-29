@@ -538,7 +538,7 @@ function ge() {
         const h = t.trackballX, m = t.trackballY, C = -Math.cos(h) * r + Math.sin(h) * Math.sin(m) * l, k = -Math.cos(m) * l, L = Math.sin(h) * r + Math.cos(h) * Math.sin(m) * l;
         t.targetX = t.targetX + C * t.targetDiam * 1e-3, t.targetY = t.targetY + k * t.targetDiam * 1e-3, t.targetZ = t.targetZ + L * t.targetDiam * 1e-3;
       } else
-        t.trackballX < 180 && (t.trackballX = t.trackballX - r * 0.01), t.trackballY < 180 && (t.trackballY = t.trackballY - l * 0.01);
+        t.trackballX < 60 && (t.trackballX = t.trackballX - r * 0.01), t.trackballY < 60 && (t.trackballY = t.trackballY - l * 0.01);
     }), (a = t.appCanvas) == null || a.addEventListener("keydown", (s) => {
       switch (s.code) {
         case "KeyW":
