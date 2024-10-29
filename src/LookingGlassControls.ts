@@ -8,6 +8,8 @@ export function initLookingGlassControlGUI() {
 	console.warn('window placement called without a valid XR Session!')
 	}
 	else {
+		cfg.trackballY = 0
+		cfg.trackballX = 0
 		const styleElement = document.createElement("style")
 		document.head.appendChild(styleElement)
 		styleElement.sheet?.insertRule("#LookingGlassWebXRControls * { all: revert; font-family: sans-serif }")

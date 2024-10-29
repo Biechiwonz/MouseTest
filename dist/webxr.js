@@ -405,6 +405,7 @@ function ge() {
       const o = t.trackballX, h = t.trackballY, m = Math.cos(o) * s - Math.sin(o) * Math.cos(h) * r, C = -Math.sin(h) * r, _ = -Math.sin(o) * s - Math.cos(o) * Math.cos(h) * r;
       t.targetX = t.targetX + m * t.targetDiam * 0.03, t.targetY = t.targetY + C * t.targetDiam * 0.03, t.targetZ = t.targetZ + _ * t.targetDiam * 0.03, requestAnimationFrame(u);
     };
+    t.trackballY = 0, t.trackballX = 0;
     const T = document.createElement("style");
     document.head.appendChild(T), (i = T.sheet) == null || i.insertRule("#LookingGlassWebXRControls * { all: revert; font-family: sans-serif }");
     const c = document.createElement("div");
@@ -428,16 +429,16 @@ function ge() {
       m.appendChild(L), L.innerText = o.label, L.setAttribute("for", C), L.style.width = "100px", L.style.display = "inline-block", L.style.textDecoration = "dotted underline 1px", L.style.fontFamily = '"Courier New"', L.style.fontSize = "13px", L.style.fontWeight = "bold", L.title = o.title;
       const v = document.createElement("input");
       m.appendChild(v), Object.assign(v, r), v.id = C, v.title = o.title, v.value = r.value !== void 0 ? r.value : _;
-      const X = (E) => {
+      const V = (E) => {
         t[s] = E, G(E);
       };
       v.oninput = () => {
         const E = r.type === "range" ? parseFloat(v.value) : r.type === "checkbox" ? v.checked : v.value;
-        X(E);
+        V(E);
       };
       const K = (E) => {
         let p = E(t[s]);
-        o.fixRange && (p = o.fixRange(p), v.max = Math.max(parseFloat(v.max), p).toString(), v.min = Math.min(parseFloat(v.min), p).toString()), v.value = p, X(p);
+        o.fixRange && (p = o.fixRange(p), v.max = Math.max(parseFloat(v.max), p).toString(), v.min = Math.min(parseFloat(v.min), p).toString()), v.value = p, V(p);
       };
       r.type === "range" && (v.style.width = "110px", v.style.height = "8px", v.onwheel = (E) => {
         K((p) => p + Math.sign(E.deltaX - E.deltaY) * r.step);
@@ -695,8 +696,8 @@ class Re extends me {
       e.useProgram(r), e.uniform1i(D, 0), e.uniform1fv(W, a.subpixelCells), e.useProgram(U);
     };
     a.addEventListener("on-config-changed", L);
-    const v = y ? y.createVertexArrayOES() : e.createVertexArray(), X = e.createBuffer(), K = e.getParameter(e.ARRAY_BUFFER_BINDING), G = e.getParameter(k);
-    x(v), e.bindBuffer(e.ARRAY_BUFFER, X), e.bufferData(e.ARRAY_BUFFER, new Float32Array([0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1]), e.STATIC_DRAW), e.enableVertexAttribArray(C), e.vertexAttribPointer(C, 2, e.FLOAT, !1, 0, 0), x(G), e.bindBuffer(e.ARRAY_BUFFER, K);
+    const v = y ? y.createVertexArrayOES() : e.createVertexArray(), V = e.createBuffer(), K = e.getParameter(e.ARRAY_BUFFER_BINDING), G = e.getParameter(k);
+    x(v), e.bindBuffer(e.ARRAY_BUFFER, V), e.bufferData(e.ARRAY_BUFFER, new Float32Array([0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1]), e.STATIC_DRAW), e.enableVertexAttribArray(C), e.vertexAttribPointer(C, 2, e.FLOAT, !1, 0, 0), x(G), e.bindBuffer(e.ARRAY_BUFFER, K);
     const E = () => {
       console.assert(this[P].LookingGlassEnabled), e.bindFramebuffer(e.FRAMEBUFFER, f);
       const M = e.getParameter(e.COLOR_CLEAR_VALUE), D = e.getParameter(e.DEPTH_CLEAR_VALUE), W = e.getParameter(e.STENCIL_CLEAR_VALUE);
@@ -735,12 +736,12 @@ class Re extends me {
     return S().framebufferHeight;
   }
 }
-const V = class extends fe {
+const X = class extends fe {
   constructor(i) {
-    super(i), this.sessions = /* @__PURE__ */ new Map(), this.viewSpaces = [], this.basePoseMatrix = g.create(), this.inlineProjectionMatrix = g.create(), this.inlineInverseViewMatrix = g.create(), this.LookingGlassProjectionMatrices = [], this.LookingGlassInverseViewMatrices = [], this.captureScreenshot = !1, this.screenshotCallback = null, V.instance || (V.instance = this);
+    super(i), this.sessions = /* @__PURE__ */ new Map(), this.viewSpaces = [], this.basePoseMatrix = g.create(), this.inlineProjectionMatrix = g.create(), this.inlineInverseViewMatrix = g.create(), this.LookingGlassProjectionMatrices = [], this.LookingGlassInverseViewMatrices = [], this.captureScreenshot = !1, this.screenshotCallback = null, X.instance || (X.instance = this);
   }
   static getInstance() {
-    return V.instance;
+    return X.instance;
   }
   onBaseLayerSet(i, e) {
     const n = this.sessions.get(i);
@@ -861,7 +862,7 @@ const V = class extends fe {
   onWindowResize() {
   }
 };
-let I = V;
+let I = X;
 R(I, "instance", null);
 let Te = 0;
 class xe {
@@ -947,8 +948,8 @@ async function _e(t) {
 function Me(t) {
   return new Promise((i) => setTimeout(i, t));
 }
-const Ve = S();
+const Xe = S();
 export {
-  Ve as LookingGlassConfig,
+  Xe as LookingGlassConfig,
   $ as LookingGlassWebXRPolyfill
 };
