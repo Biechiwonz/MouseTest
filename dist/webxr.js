@@ -539,7 +539,7 @@ function ge() {
         const h = t.trackballX, m = t.trackballY, C = -Math.cos(h) * r + Math.sin(h) * Math.sin(m) * o, _ = -Math.cos(m) * o, L = Math.sin(h) * r + Math.cos(h) * Math.sin(m) * o;
         t.targetX = t.targetX + C * t.targetDiam * 1e-3, t.targetY = t.targetY + _ * t.targetDiam * 1e-3, t.targetZ = t.targetZ + L * t.targetDiam * 1e-3;
       } else
-        y.innerHTML = t.trackballX.toString(), t.trackballY > 0.5 ? -o * 0.01 < 0 && (t.trackballY = t.trackballY - o * 0.01, t.trackballX = t.trackballX - r * 0.01) : t.trackballY < -0.5 ? -o * 0.01 > 0 && (t.trackballY = t.trackballY - o * 0.01, t.trackballX = t.trackballX - r * 0.01) : -0.5 <= t.trackballY && t.trackballY <= 0.5 && (t.trackballY = t.trackballY - o * 0.01, t.trackballX = t.trackballX - r * 0.01);
+        y.innerHTML = t.trackballX.toString(), t.trackballX > 1.5 ? -r * 0.01 < 0 && (t.trackballX = t.trackballX - r * 0.01) : t.trackballX < -1.5 ? -r * 0.01 > 0 && (t.trackballX = t.trackballX - r * 0.01) : -1.5 <= t.trackballX && t.trackballX <= 1.5 && (t.trackballX = t.trackballX - r * 0.01), t.trackballY > 0.5 ? -o * 0.01 < 0 && (t.trackballY = t.trackballY - o * 0.01) : t.trackballY < -0.5 ? -o * 0.01 > 0 && (t.trackballY = t.trackballY - o * 0.01) : -0.5 <= t.trackballY && t.trackballY <= 0.5 && (t.trackballY = t.trackballY - o * 0.01);
     }), (a = t.appCanvas) == null || a.addEventListener("keydown", (s) => {
       switch (s.code) {
         case "KeyW":

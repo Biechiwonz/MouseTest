@@ -326,26 +326,37 @@ export function initLookingGlassControlGUI() {
 				cfg.targetZ = cfg.targetZ + dz * cfg.targetDiam * 0.001
 			} else {
 				help.innerHTML = cfg.trackballX.toString()
-				if (cfg.trackballY > 0.5)
+				if (cfg.trackballX > 1.5)
 				{
-					if ((- my * 0.01) < 0)
+					if ((- mx * 0.01) < 0)
 					{
-						cfg.trackballY = cfg.trackballY - my * 0.01
 						cfg.trackballX = cfg.trackballX - mx * 0.01
 					}
 				}
-				else if (cfg.trackballY < -0.5)
+				else if (cfg.trackballX < -1.5)
 				{
-					if ((- my * 0.01) > 0)
+					if ((- mx * 0.01) > 0)
 					{
-						cfg.trackballY = cfg.trackballY - my * 0.01
 						cfg.trackballX = cfg.trackballX - mx * 0.01
 					}
 				}
-				else if (-0.5 <= cfg.trackballY && cfg.trackballY <= 0.5)
+				else if (-1.5 <= cfg.trackballX && cfg.trackballX <= 1.5)
 				{
-					cfg.trackballY = cfg.trackballY - my * 0.01
 					cfg.trackballX = cfg.trackballX - mx * 0.01
+				}
+
+				if (cfg.trackballY > 0.5) {
+					if ((- my * 0.01) < 0) {
+						cfg.trackballY = cfg.trackballY - my * 0.01
+					}
+				}
+				else if (cfg.trackballY < -0.5) {
+					if ((- my * 0.01) > 0) {
+						cfg.trackballY = cfg.trackballY - my * 0.01
+					}
+				}
+				else if (-0.5 <= cfg.trackballY && cfg.trackballY <= 0.5) {
+					cfg.trackballY = cfg.trackballY - my * 0.01
 				}
 			}	
 		})
