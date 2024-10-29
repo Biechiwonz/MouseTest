@@ -318,9 +318,9 @@ export function initLookingGlassControlGUI() {
 				cfg.targetY = cfg.targetY + dy * cfg.targetDiam * 0.001
 				cfg.targetZ = cfg.targetZ + dz * cfg.targetDiam * 0.001
 			} else {
-
-					cfg.trackballY = cfg.trackballY - my * 0.01
-					cfg.trackballX = cfg.trackballX - mx * 0.01
+				help.innerHTML = cfg.trackballX.toString()
+				cfg.trackballY = cfg.trackballY - my * 0.01
+				cfg.trackballX = cfg.trackballX - mx * 0.01
 
 					
 			}
@@ -374,11 +374,10 @@ export function initLookingGlassControlGUI() {
 			const dy = -Math.sin(ty) * ky
 			const dz = -Math.sin(tx) * kx - Math.cos(tx) * Math.cos(ty) * ky
 			help.innerHTML = cfg.targetX.toString()
-			if (cfg.targetX > 0.8) {
-				cfg.targetX = cfg.targetX + dx * cfg.targetDiam * 0.03
-				cfg.targetY = cfg.targetY + dy * cfg.targetDiam * 0.03
-				cfg.targetZ = cfg.targetZ + dz * cfg.targetDiam * 0.03
-			}
+
+			cfg.targetX = cfg.targetX + dx * cfg.targetDiam * 0.03
+			cfg.targetY = cfg.targetY + dy * cfg.targetDiam * 0.03
+			cfg.targetZ = cfg.targetZ + dz * cfg.targetDiam * 0.03
 
 			requestAnimationFrame(flyCamera)
 		}

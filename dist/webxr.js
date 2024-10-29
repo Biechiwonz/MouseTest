@@ -8,7 +8,7 @@ import * as he from "holoplay-core";
 import { Shader as de } from "holoplay-core";
 import pe from "@lookingglass/webxr-polyfill/src/devices/XRDevice";
 import fe from "@lookingglass/webxr-polyfill/src/api/XRSpace";
-import { mat4 as g } from "gl-matrix";
+import { mat4 as y } from "gl-matrix";
 import me, { PRIVATE as be } from "@lookingglass/webxr-polyfill/src/api/XRWebGLLayer";
 const O = 1.6;
 var Y;
@@ -403,7 +403,7 @@ function ge() {
       let s = d.d - d.a, r = d.w - d.s;
       s && r && (s *= Math.sqrt(0.5), r *= Math.sqrt(0.5));
       const l = t.trackballX, h = t.trackballY, m = Math.cos(l) * s - Math.sin(l) * Math.cos(h) * r, C = -Math.sin(h) * r, M = -Math.sin(l) * s - Math.cos(l) * Math.cos(h) * r;
-      y.innerHTML = t.targetX.toString(), t.targetX > 0.8 && (t.targetX = t.targetX + m * t.targetDiam * 0.03, t.targetY = t.targetY + C * t.targetDiam * 0.03, t.targetZ = t.targetZ + M * t.targetDiam * 0.03), requestAnimationFrame(u);
+      g.innerHTML = t.targetX.toString(), t.targetX = t.targetX + m * t.targetDiam * 0.03, t.targetY = t.targetY + C * t.targetDiam * 0.03, t.targetZ = t.targetZ + M * t.targetDiam * 0.03, requestAnimationFrame(u);
     };
     const T = document.createElement("style");
     document.head.appendChild(T), (i = T.sheet) == null || i.insertRule("#LookingGlassWebXRControls * { all: revert; font-family: sans-serif }");
@@ -417,8 +417,8 @@ function ge() {
     w.style.display = "block", w.style.margin = "auto", w.style.width = "100%", w.style.height = "35px", w.style.padding = "4px", w.style.marginBottom = "8px", w.style.borderRadius = "8px", w.id = "copybutton", c.appendChild(w), w.innerText = "Copy Config", w.addEventListener("click", () => {
       ye(t);
     });
-    const y = document.createElement("div");
-    c.appendChild(y), y.style.width = "290px", y.style.whiteSpace = "normal", y.style.color = "rgba(255,255,255,0.7)", y.style.fontSize = "14px", y.style.margin = "5px 0", y.innerHTML = "mousetest10 Click the popup and use WASD, mouse left/right drag, and scroll.";
+    const g = document.createElement("div");
+    c.appendChild(g), g.style.width = "290px", g.style.whiteSpace = "normal", g.style.color = "rgba(255,255,255,0.7)", g.style.fontSize = "14px", g.style.margin = "5px 0", g.innerHTML = "mousetest10 Click the popup and use WASD, mouse left/right drag, and scroll.";
     const _ = document.createElement("div");
     c.appendChild(_);
     const x = (s, r, l) => {
@@ -538,7 +538,7 @@ function ge() {
         const h = t.trackballX, m = t.trackballY, C = -Math.cos(h) * r + Math.sin(h) * Math.sin(m) * l, M = -Math.cos(m) * l, L = Math.sin(h) * r + Math.cos(h) * Math.sin(m) * l;
         t.targetX = t.targetX + C * t.targetDiam * 1e-3, t.targetY = t.targetY + M * t.targetDiam * 1e-3, t.targetZ = t.targetZ + L * t.targetDiam * 1e-3;
       } else
-        t.trackballY = t.trackballY - l * 0.01, t.trackballX = t.trackballX - r * 0.01;
+        g.innerHTML = t.trackballX.toString(), t.trackballY = t.trackballY - l * 0.01, t.trackballX = t.trackballX - r * 0.01;
     }), (a = t.appCanvas) == null || a.addEventListener("keydown", (s) => {
       switch (s.code) {
         case "KeyW":
@@ -643,7 +643,7 @@ class Re extends me {
     });
     const u = this[be].config, T = e.createTexture();
     let c, b;
-    const p = e.createFramebuffer(), F = e.enable.bind(e), w = e.disable.bind(e), y = e.getExtension("OES_vertex_array_object"), _ = 34229, x = y ? y.bindVertexArrayOES.bind(y) : e.bindVertexArray.bind(e), d = () => {
+    const p = e.createFramebuffer(), F = e.enable.bind(e), w = e.disable.bind(e), g = e.getExtension("OES_vertex_array_object"), _ = 34229, x = g ? g.bindVertexArrayOES.bind(g) : e.bindVertexArray.bind(e), d = () => {
       const k = e.getParameter(e.TEXTURE_BINDING_2D);
       if (e.bindTexture(e.TEXTURE_2D, T), e.texImage2D(e.TEXTURE_2D, 0, e.RGBA, a.framebufferWidth, a.framebufferHeight, 0, e.RGBA, e.UNSIGNED_BYTE, null), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_MIN_FILTER, e.LINEAR), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_MAG_FILTER, e.LINEAR), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_BASE_LEVEL, 0), e.texParameteri(e.TEXTURE_2D, e.TEXTURE_MAX_LEVEL, 0), e.bindTexture(e.TEXTURE_2D, k), c) {
         const D = e.getParameter(e.RENDERBUFFER_BINDING);
@@ -695,7 +695,7 @@ class Re extends me {
       e.useProgram(r), e.uniform1i(D, 0), e.uniform1fv(W, a.subpixelCells), e.useProgram(U);
     };
     a.addEventListener("on-config-changed", L);
-    const v = y ? y.createVertexArrayOES() : e.createVertexArray(), X = e.createBuffer(), K = e.getParameter(e.ARRAY_BUFFER_BINDING), G = e.getParameter(_);
+    const v = g ? g.createVertexArrayOES() : e.createVertexArray(), X = e.createBuffer(), K = e.getParameter(e.ARRAY_BUFFER_BINDING), G = e.getParameter(_);
     x(v), e.bindBuffer(e.ARRAY_BUFFER, X), e.bufferData(e.ARRAY_BUFFER, new Float32Array([0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1]), e.STATIC_DRAW), e.enableVertexAttribArray(C), e.vertexAttribPointer(C, 2, e.FLOAT, !1, 0, 0), x(G), e.bindBuffer(e.ARRAY_BUFFER, K);
     const E = () => {
       console.assert(this[P].LookingGlassEnabled), e.bindFramebuffer(e.FRAMEBUFFER, p);
@@ -737,7 +737,7 @@ class Re extends me {
 }
 const V = class extends pe {
   constructor(i) {
-    super(i), this.sessions = /* @__PURE__ */ new Map(), this.viewSpaces = [], this.basePoseMatrix = g.create(), this.inlineProjectionMatrix = g.create(), this.inlineInverseViewMatrix = g.create(), this.LookingGlassProjectionMatrices = [], this.LookingGlassInverseViewMatrices = [], this.captureScreenshot = !1, this.screenshotCallback = null, V.instance || (V.instance = this);
+    super(i), this.sessions = /* @__PURE__ */ new Map(), this.viewSpaces = [], this.basePoseMatrix = y.create(), this.inlineProjectionMatrix = y.create(), this.inlineInverseViewMatrix = y.create(), this.LookingGlassProjectionMatrices = [], this.LookingGlassInverseViewMatrices = [], this.captureScreenshot = !1, this.screenshotCallback = null, V.instance || (V.instance = this);
   }
   static getInstance() {
     return V.instance;
@@ -787,27 +787,27 @@ const V = class extends pe {
     const n = this.sessions.get(i), a = S();
     if (n.immersive) {
       const o = Math.tan(0.5 * a.fovy), u = 0.5 * a.targetDiam / o, T = u - a.targetDiam, c = this.basePoseMatrix;
-      g.fromTranslation(c, [a.targetX, a.targetY, a.targetZ]), g.rotate(c, c, a.trackballX, [0, 1, 0]), g.rotate(c, c, -a.trackballY, [1, 0, 0]), g.translate(c, c, [0, 0, u]);
+      y.fromTranslation(c, [a.targetX, a.targetY, a.targetZ]), y.rotate(c, c, a.trackballX, [0, 1, 0]), y.rotate(c, c, -a.trackballY, [1, 0, 0]), y.translate(c, c, [0, 0, u]);
       for (let b = 0; b < a.numViews; ++b) {
-        const p = (b + 0.5) / a.numViews - 0.5, F = Math.tan(a.viewCone * p), w = u * F, y = this.LookingGlassInverseViewMatrices[b] = this.LookingGlassInverseViewMatrices[b] || g.create();
-        g.translate(y, c, [w, 0, 0]), g.invert(y, y);
-        const _ = Math.max(T + e.depthNear, 0.01), x = T + e.depthFar, d = _ * o, s = d, r = -d, l = _ * -F, h = a.aspect * d, m = l + h, C = l - h, M = this.LookingGlassProjectionMatrices[b] = this.LookingGlassProjectionMatrices[b] || g.create();
-        g.set(M, 2 * _ / (m - C), 0, 0, 0, 0, 2 * _ / (s - r), 0, 0, (m + C) / (m - C), (s + r) / (s - r), -(x + _) / (x - _), -1, 0, 0, -2 * x * _ / (x - _), 0);
+        const p = (b + 0.5) / a.numViews - 0.5, F = Math.tan(a.viewCone * p), w = u * F, g = this.LookingGlassInverseViewMatrices[b] = this.LookingGlassInverseViewMatrices[b] || y.create();
+        y.translate(g, c, [w, 0, 0]), y.invert(g, g);
+        const _ = Math.max(T + e.depthNear, 0.01), x = T + e.depthFar, d = _ * o, s = d, r = -d, l = _ * -F, h = a.aspect * d, m = l + h, C = l - h, M = this.LookingGlassProjectionMatrices[b] = this.LookingGlassProjectionMatrices[b] || y.create();
+        y.set(M, 2 * _ / (m - C), 0, 0, 0, 0, 2 * _ / (s - r), 0, 0, (m + C) / (m - C), (s + r) / (s - r), -(x + _) / (x - _), -1, 0, 0, -2 * x * _ / (x - _), 0);
       }
     } else {
       const o = n.baseLayer.context, u = o.drawingBufferWidth / o.drawingBufferHeight;
-      g.perspective(this.inlineProjectionMatrix, e.inlineVerticalFieldOfView, u, e.depthNear, e.depthFar), g.fromTranslation(this.basePoseMatrix, [0, O, 0]), g.invert(this.inlineInverseViewMatrix, this.basePoseMatrix), n.baseLayer[P].clearFramebuffer();
+      y.perspective(this.inlineProjectionMatrix, e.inlineVerticalFieldOfView, u, e.depthNear, e.depthFar), y.fromTranslation(this.basePoseMatrix, [0, O, 0]), y.invert(this.inlineInverseViewMatrix, this.basePoseMatrix), n.baseLayer[P].clearFramebuffer();
     }
   }
   onFrameEnd(i) {
     this.sessions.get(i).baseLayer[P].blitTextureToDefaultFramebufferIfNeeded(), this.captureScreenshot && this.screenshotCallback && (this.screenshotCallback(), this.captureScreenshot = !1);
   }
   async requestFrameOfReferenceTransform(i, e) {
-    const n = g.create();
+    const n = y.create();
     switch (i) {
       case "viewer":
       case "local":
-        return g.fromTranslation(n, [0, -O, 0]), n;
+        return y.fromTranslation(n, [0, -O, 0]), n;
       case "local-floor":
         return n;
       default:
@@ -841,7 +841,7 @@ const V = class extends pe {
     return !0;
   }
   getProjectionMatrix(i, e) {
-    return e === void 0 ? this.inlineProjectionMatrix : this.LookingGlassProjectionMatrices[e] || g.create();
+    return e === void 0 ? this.inlineProjectionMatrix : this.LookingGlassProjectionMatrices[e] || y.create();
   }
   getBasePoseMatrix() {
     return this.basePoseMatrix;
@@ -850,7 +850,7 @@ const V = class extends pe {
     return this.inlineInverseViewMatrix;
   }
   _getViewMatrixByIndex(i) {
-    return this.LookingGlassInverseViewMatrices[i] = this.LookingGlassInverseViewMatrices[i] || g.create();
+    return this.LookingGlassInverseViewMatrices[i] = this.LookingGlassInverseViewMatrices[i] || y.create();
   }
   getInputSources() {
     return [];
