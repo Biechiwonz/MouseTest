@@ -323,7 +323,7 @@ export function initLookingGlassControlGUI() {
 				cfg.targetY = cfg.targetY + dy * cfg.targetDiam * 0.001
 				cfg.targetZ = cfg.targetZ + dz * cfg.targetDiam * 0.001
 			} else {
-				help.innerHTML = cfg.trackballY.toString()
+				help.innerHTML = cfg.trackballX.toString()
 				if (cfg.trackballY > 0.5)
 				{
 					if ((- my * 0.01) < 0)
