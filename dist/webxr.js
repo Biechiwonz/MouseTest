@@ -403,7 +403,7 @@ function ge() {
       let s = d.d - d.a, r = d.w - d.s;
       s && r && (s *= Math.sqrt(0.5), r *= Math.sqrt(0.5));
       const l = t.trackballX, h = t.trackballY, m = Math.cos(l) * s - Math.sin(l) * Math.cos(h) * r, C = -Math.sin(h) * r, M = -Math.sin(l) * s - Math.cos(l) * Math.cos(h) * r;
-      y.innerHTML = t.targetX.toString(), t.targetX < 0.8 && (t.targetX = t.targetX + m * t.targetDiam * 0.03, t.targetY = t.targetY + C * t.targetDiam * 0.03, t.targetZ = t.targetZ + M * t.targetDiam * 0.03), requestAnimationFrame(u);
+      y.innerHTML = t.targetX.toString(), t.targetX > 0.8 && (t.targetX = t.targetX + m * t.targetDiam * 0.03, t.targetY = t.targetY + C * t.targetDiam * 0.03, t.targetZ = t.targetZ + M * t.targetDiam * 0.03), requestAnimationFrame(u);
     };
     const T = document.createElement("style");
     document.head.appendChild(T), (i = T.sheet) == null || i.insertRule("#LookingGlassWebXRControls * { all: revert; font-family: sans-serif }");
