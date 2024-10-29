@@ -257,15 +257,34 @@ export function initLookingGlassControlGUI() {
 				cfg.targetY = cfg.targetY + dy * cfg.targetDiam * 0.001
 				cfg.targetZ = cfg.targetZ + dz * cfg.targetDiam * 0.001
 			} else {
-				
-				cfg.trackballY = cfg.trackballY - my * 0.01
-				cfg.trackballX = cfg.trackballX - mx * 0.01
-			
 
+				if (cfg.trackballX > 0.75) {
+					if ((- mx * 0.01) < 0) {
+						cfg.trackballX = cfg.trackballX - mx * 0.01
+					}
+				}
+				else if (cfg.trackballX < -0.75) {
+					if ((- mx * 0.01) > 0) {
+						cfg.trackballX = cfg.trackballX - mx * 0.01
+					}
+				}
+				else if (-0.75 <= cfg.trackballX && cfg.trackballX <= 0.75) {
+					cfg.trackballX = cfg.trackballX - mx * 0.01
+				}
 
-
-			
-				
+				if (cfg.trackballY > 0.5) {
+					if ((- my * 0.01) < 0) {
+						cfg.trackballY = cfg.trackballY - my * 0.01
+					}
+				}
+				else if (cfg.trackballY < -0.5) {
+					if ((- my * 0.01) > 0) {
+						cfg.trackballY = cfg.trackballY - my * 0.01
+					}
+				}
+				else if (-0.5 <= cfg.trackballY && cfg.trackballY <= 0.5) {
+					cfg.trackballY = cfg.trackballY - my * 0.01
+				}
 			}
 		})
 	
