@@ -82,7 +82,7 @@ export function initLookingGlassControlGUI() {
 		help.style.color = "rgba(255,255,255,0.7)"
 		help.style.fontSize = "14px"
 		help.style.margin = "5px 0"
-		help.innerHTML = "mousetest5 Click the popup and use WASD, mouse left/right drag, and scroll."
+		help.innerHTML = "mousetest7 Click the popup and use WASD, mouse left/right drag, and scroll."
 	
 		const controlListDiv = document.createElement("div")
 		c.appendChild(controlListDiv)
@@ -255,14 +255,10 @@ export function initLookingGlassControlGUI() {
 				cfg.targetY = cfg.targetY + dy * cfg.targetDiam * 0.001
 				cfg.targetZ = cfg.targetZ + dz * cfg.targetDiam * 0.001
 			} else {
-				if (cfg.trackballX < 0.5) {
-					cfg.trackballX = cfg.trackballX - mx * 0.01
-
-				}
-				if (cfg.trackballY < 0.5) {
-
-					cfg.trackballY = cfg.trackballY - my * 0.01
-				}
+				
+				cfg.trackballX = cfg.trackballX - mx * 0.01
+				cfg.trackballY = cfg.trackballY - my * 0.01
+				
 			}
 		})
 	
@@ -324,10 +320,8 @@ export function initLookingGlassControlGUI() {
 			} else {
 				if (cfg.trackballX < 20) {
 					cfg.trackballX = cfg.trackballX - mx * 0.01
-
 				}
 				if (cfg.trackballY <0.5) {
-
 					cfg.trackballY = cfg.trackballY - my * 0.01
 				}
 			}
