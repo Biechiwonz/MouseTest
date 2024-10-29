@@ -418,7 +418,7 @@ function ge() {
       ye(t);
     });
     const y = document.createElement("div");
-    c.appendChild(y), y.style.width = "290px", y.style.whiteSpace = "normal", y.style.color = "rgba(255,255,255,0.7)", y.style.fontSize = "14px", y.style.margin = "5px 0", y.innerHTML = "mousetest16 Click the popup and use WASD, mouse left/right drag, and scroll.";
+    c.appendChild(y), y.style.width = "290px", y.style.whiteSpace = "normal", y.style.color = "rgba(255,255,255,0.7)", y.style.fontSize = "14px", y.style.margin = "5px 0", y.innerHTML = "mousetest17 Click the popup and use WASD, mouse left/right drag, and scroll.";
     const _ = document.createElement("div");
     c.appendChild(_);
     const x = (s, r, l) => {
@@ -538,7 +538,7 @@ function ge() {
         const h = t.trackballX, m = t.trackballY, C = -Math.cos(h) * r + Math.sin(h) * Math.sin(m) * l, M = -Math.cos(m) * l, L = Math.sin(h) * r + Math.cos(h) * Math.sin(m) * l;
         t.targetX = t.targetX + C * t.targetDiam * 1e-3, t.targetY = t.targetY + M * t.targetDiam * 1e-3, t.targetZ = t.targetZ + L * t.targetDiam * 1e-3;
       } else
-        t.trackballY < 100 && (t.trackballY = t.trackballY - l * 0.01, t.trackballX = t.trackballX - r * 0.01);
+        t.trackballY < 10 && (t.trackballY = t.trackballY - l * 0.01, t.trackballX = t.trackballX - r * 0.01);
     }), (a = t.appCanvas) == null || a.addEventListener("keydown", (s) => {
       switch (s.code) {
         case "KeyW":
